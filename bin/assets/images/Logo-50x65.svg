@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="65px" viewBox="0 0 50 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo_50x65</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo_50x65">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="50" height="50" rx="2"></rect>
+            <path d="M16.8514364,34.0827068 L18.3353685,34.0827068 C18.8948839,34.0827068 19.2111317,33.7354394 19.2111317,33.1897336 L19.2111317,26.3932155 L28.6255861,26.3932155 C29.1851015,26.3932155 29.5256761,26.070753 29.5256761,25.5002424 L29.5256761,24.3096115 C29.5256761,23.7639056 29.1851015,23.4166383 28.6255861,23.4166383 L19.2111317,23.4166383 L19.2111317,18.9765772 L32.5665205,18.9765772 C33.1260359,18.9765772 33.4422837,18.6293099 33.4422837,18.0587993 L33.4422837,16.8929732 C33.4422837,16.3472673 33.1260359,16 32.5665205,16 L16.8514364,16 C16.3405746,16 16,16.3472673 16,16.8929732 L16,33.1897336 C16,33.7354394 16.3405746,34.0827068 16.8514364,34.0827068 L16.8514364,34.0827068 Z" id="F" fill="#000000"></path>
+            <text id="F-O-A-M" font-family="TrioGrotesk-Medium, Trio Grotesk" font-size="9.5" font-weight="400" fill="#FFFFFF">
+                <tspan x="0" y="64">F O A M</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

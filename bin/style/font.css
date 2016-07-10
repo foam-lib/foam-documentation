@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Trio Grotesk Normal';
+    src: url('../assets/fonts/trio-grotesk/triogrotesk-normal-v102.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Trio Grotesk Medium';
+    src: url('../assets/fonts/trio-grotesk/triogrotesk-medium.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Suisse Intl Mono Regular';
+    src: url('../assets/fonts/suisse-intl-mono/SuisseIntlMono-Regular-WebS.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Suisse Intl Mono Bold';
+    src: url('../assets/fonts/suisse-intl-mono/SuisseIntlMono-Bold-WebS.woff') format('woff');
+}

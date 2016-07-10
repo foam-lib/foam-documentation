@@ -1,0 +1,75 @@
+@import "font.css";
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* BETA LABEL
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+#beta-label{
+    width: 100%;
+    height: 50px;
+
+    font-size: 0.75rem;
+    font-family: 'Suisse Intl Mono Regular', sans-serif;
+    color: #000;
+    line-height: 50px;
+
+    text-align: center;
+    background-color: #FFFF00;
+}
+
+#beta-label strong{
+    font-family: 'Suisse Intl Mono Bold', sans-serif;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* GENERAL
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background-color: #000;
+
+    font-size: 1em;
+    color:#fff;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+main{
+    min-width: 860px;
+    max-width: 924px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+#reference-header-logo{
+    padding-bottom: 75px;
+}
+
+#reference-header{
+}
+
+#reference-header h1{
+    font-family: 'Trio Grotesk Normal', sans-serif;
+    font-size: 1.625rem;
+    padding: 0 0 40px 0;
+    margin: 0;
+}
+
+#reference-header a{
+    font-family: 'Trio Grotesk Medium', sans-serif;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 34px;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 0.625rem;
+    line-height: 32px;
+    padding: 0 8px;
+}

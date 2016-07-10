@@ -1,0 +1,66 @@
+mixin createPropertiesOverview(prefix,properties)
+    li.properties
+        h3 #{prefix}
+        ul.property-list
+            each group in properties
+                li.list
+                    - if(group.name)
+                    h3 #{group.name}
+                    ul
+                        each item in group.items
+                            li #{item.name}
+
+
+
+mixin createSubModuleReference(module)
+    li.overview-sub-module
+        header
+            .overview-info
+                h2 #{module.name}
+                a(href='#{module.source}') source
+            .overview-description
+                p #{module.description}
+        ul.sub-module-properties
+            -if(module.properties.static && module.properties.static.length)
+            +createPropertiesOverview('static',module.properties.static)
+            -if(module.properties.instance && module.properties.instance.length)
+            +createPropertiesOverview('instance',module.properties.instance)
+
+
+mixin createModuleReference(module)
+    li.module-overview
+        header
+            .overview-info
+                h2 #{module.name} /
+                .info-meta
+                    a(href='#{module.meta.repository}') repository
+                    a(href='#{module.meta.npm}') npm
+                a.info-layout
+        ul.overview-sub-modules
+            each submodule in module.modules
+                +createSubModuleReference(submodule)
+
+
+doctype
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        link(type= "text/css" rel="styleSheet" href="./style/style.css")
+    body
+        header#beta-label
+            strong FOAM BETA API REFERENCE
+            |  – Overview beta.0.0.4
+        main
+            header#reference-header
+                #reference-header-logo
+                    img(src='./assets/images/Logo-50x65.svg')
+                h1 A Javascript toolkit for working on graphics in browser-environments
+                a view on github
+            section#reference-overview
+                ul#overview-list
+                    each module in modules
+                        +createModuleReference(module)
+            section#reference-detail
+                ul#detail-list
+            footer
+
