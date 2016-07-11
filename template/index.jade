@@ -28,14 +28,14 @@ mixin createSubModuleReference(module)
 
 
 mixin createModuleReference(module)
-    li.module-overview
-        header
-            .overview-info
-                h2 #{module.name} /
-                .info-meta
-                    a(href='#{module.meta.repository}') repository
-                    a(href='#{module.meta.npm}') npm
-                a.info-layout
+    li.overview-module
+        header.module-info
+            h2 #{module.name}
+            .info-meta
+                a(href='#{module.meta.repository}') repository
+                |  |
+                a(href='#{module.meta.npm}')  npm
+            a.info-layout-trigger
         ul.overview-sub-modules
             each submodule in module.modules
                 +createSubModuleReference(submodule)
@@ -50,17 +50,19 @@ html(lang="en")
         header#beta-label
             strong FOAM BETA API REFERENCE
             |  – Overview beta.0.0.4
-        main
+        main#reference-beta
             header#reference-header
-                #reference-header-logo
-                    img(src='./assets/images/Logo-50x65.svg')
+                img(src='./assets/images/Logo-50x65.svg')#header-logo
                 h1 A Javascript toolkit for working on graphics in browser-environments
-                a view on github
+                a#header-btn-github view on github
+                #header-search-placeholder
+                    | Search Reference
+                    span.placeholder modules,classes,methods or constants
             section#reference-overview
-                ul#overview-list
+                ul#overview
                     each module in modules
                         +createModuleReference(module)
             section#reference-detail
-                ul#detail-list
+                ul#detail
             footer
 

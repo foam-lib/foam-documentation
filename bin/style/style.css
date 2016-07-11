@@ -33,6 +33,7 @@ body{
 
     background-color: #000;
 
+    font-family: 'Suisse Intl Mono Regular', sans-serif;
     font-size: 1em;
     color:#fff;
     text-rendering: optimizeLegibility;
@@ -41,23 +42,40 @@ body{
 }
 
 main{
-    min-width: 860px;
+    min-width: 600px;
     max-width: 924px;
     margin: 0 auto;
     padding: 50px;
 }
 
-#reference-header-logo{
-    padding-bottom: 75px;
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,h2{
+    font-family: 'Trio Grotesk Normal', sans-serif;
+}
+
+h2{
+    font-size: 1.25rem;
+}
+
+a, a:hover, a:active, a:link, a:visited{
+    text-decoration: none;
+    color: inherit;
 }
 
 #reference-header{
+    padding-bottom: 20px;
 }
 
+
 #reference-header h1{
-    font-family: 'Trio Grotesk Normal', sans-serif;
     font-size: 1.625rem;
-    padding: 0 0 40px 0;
+    line-height: 1.45em;
+    padding: 0 0 35px 0;
     margin: 0;
 }
 
@@ -71,5 +89,73 @@ main{
     text-transform: uppercase;
     font-size: 0.625rem;
     line-height: 32px;
-    padding: 0 8px;
+    padding: 0 12px;
 }
+
+#header-logo{
+    margin-bottom: 75px;;
+}
+
+#header-btn-github{
+    margin-bottom: 70px;
+}
+
+#header-search-placeholder{
+    display: inline-block;
+    box-sizing: border-box;
+
+    padding: 0 20px;
+
+    height: 58px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: #fff;
+
+    color: #000;
+    font-size: 1.125rem;
+    line-height: 60px;
+}
+
+#header-search-placeholder .placeholder{
+    color: #D4D3D3;
+}
+
+.module-info{
+    width: 100%;
+    border-bottom: 2px solid #fff;
+    clear: both;
+    height: 50px;
+    line-height: 50px;
+}
+
+.module-info h2, .module-info .info-meta{
+    width: 50%;
+}
+.module-info h2{
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+.module-info .info-meta{
+    float: right;
+    height: 100%;
+}
+
+.info-meta{
+    color: #3F3E3E;
+    text-align: right;
+}
+
+.info-meta a{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+
+
+.module-info h2:after{
+    content: ' /';
+    color: #F96506;
+}
+
+
