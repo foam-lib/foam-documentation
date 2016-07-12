@@ -10,7 +10,112 @@
         {
           "name": "sub-module-a",
           "source": "github.com/foam-lib/template-module/sub-module-a",
-          "description": "A description of the modules functionality.",
+          "description": "The core of all Foam applications. It handles resource management, context creation, animation loop setup and user input.",
+          "properties": {
+            "static": [
+              {
+                "items": [
+                  {
+                    "name": "functionA",
+                    "type": "function",
+                    "args": [
+                      {
+                        "name": "a",
+                        "type": "number",
+                        "description": "first argument"
+                      },
+                      {
+                        "name": "b",
+                        "type": "number",
+                        "description": "second argument"
+                      }
+                    ],
+                    "returns": "void"
+                  },
+                  {
+                    "name": "functionB",
+                    "type": "function",
+                    "args": [
+                      {
+                        "name": "a",
+                        "type": "object",
+                        "description": "first argument"
+                      }
+                    ],
+                    "returns": "number"
+                  },
+                  {
+                    "name": "constantA",
+                    "type": "string"
+                  }
+                ]
+              },{
+                "name" : "group",
+                "items" : [
+                  {
+                    "name": "groubed-function",
+                    "type": "function",
+                    "args": [],
+                    "returns": "Float32Array"
+                  }
+                ]
+              }
+            ],
+            "instance": [
+              {
+                "items": [
+                  {
+                    "name": "functionA",
+                    "type": "function",
+                    "args": [
+                      {
+                        "name": "a",
+                        "type": "number",
+                        "description": "first argument"
+                      },
+                      {
+                        "name": "b",
+                        "type": "number",
+                        "description": "second argument"
+                      }
+                    ],
+                    "returns": "void"
+                  },
+                  {
+                    "name": "functionB",
+                    "type": "function",
+                    "args": [
+                      {
+                        "name": "a",
+                        "type": "object",
+                        "description": "first argument"
+                      }
+                    ],
+                    "returns": "number"
+                  },
+                  {
+                    "name": "constantA",
+                    "type": "string"
+                  }
+                ]
+              },{
+                "name" : "group",
+                "items" : [
+                  {
+                    "name": "groubed-function",
+                    "type": "function",
+                    "args": [],
+                    "returns": "Float32Array"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "sub-module-a",
+          "source": "github.com/foam-lib/template-module/sub-module-a",
+          "description": "Keyboard input representation.",
           "properties": {
             "static": [
               {
