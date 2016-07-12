@@ -14,12 +14,10 @@ mixin createPropertiesOverview(prefix,properties)
 
 mixin createSubModuleReference(module)
     li.overview-sub-module
-        header
-            .overview-info
+        header.sub-module-info
                 h2 #{module.name}
                 a(href='#{module.source}') source
-            .overview-description
-                p #{module.description}
+        p.sub-module-description #{module.description}
         ul.sub-module-properties
             -if(module.properties.static && module.properties.static.length)
             +createPropertiesOverview('static',module.properties.static)
@@ -33,8 +31,8 @@ mixin createModuleReference(module)
             h2 #{module.name}
             .info-meta
                 a(href='#{module.meta.repository}') repository
-                |  |
-                a(href='#{module.meta.npm}')  npm
+                |&nbsp;|&nbsp;
+                a(href='#{module.meta.npm}') npm
             a.info-layout-trigger
         ul.overview-sub-modules
             each submodule in module.modules
