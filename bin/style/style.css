@@ -21,7 +21,6 @@
     font-family: 'Suisse Intl Mono Bold', sans-serif;
 }
 
-
 /*--------------------------------------------------------------------------------------------------------------------*/
 /* GENERAL
 /*--------------------------------------------------------------------------------------------------------------------*/
@@ -56,6 +55,8 @@ ul{
 
 h1,h2{
     font-family: 'Trio Grotesk Normal', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 h2{
@@ -67,10 +68,13 @@ a, a:hover, a:active, a:link, a:visited{
     color: inherit;
 }
 
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* REFERENCE-HEADER
+/*--------------------------------------------------------------------------------------------------------------------*/
+
 #reference-header{
     padding-bottom: 20px;
 }
-
 
 #reference-header h1{
     font-size: 1.625rem;
@@ -128,13 +132,30 @@ a, a:hover, a:active, a:link, a:visited{
     line-height: 50px;
 }
 
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* MODULE
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.module-info, .sub-module-info{
+    height: 55px;
+    line-height: 53px;
+    clear: both;
+    /*background: #ff0000;*/
+}
+
+.module-info a, .sub-module-info a{
+    color: #3F3E3E;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    line-height: 56px;
+}
+
 .module-info h2, .module-info .info-meta{
     width: 50%;
 }
+
 .module-info h2{
     float: left;
-    padding: 0;
-    margin: 0;
 }
 .module-info .info-meta{
     float: right;
@@ -146,16 +167,50 @@ a, a:hover, a:active, a:link, a:visited{
     text-align: right;
 }
 
-.info-meta a{
-    font-size: 0.75rem;
-    text-transform: uppercase;
-}
-
-
-
 .module-info h2:after{
     content: ' /';
     color: #F96506;
 }
 
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* SUB-MODULE
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.sub-module-info{
+    /*background: #00ff00;*/
+    border-bottom: 1px dotted #F96506;
+}
+
+.sub-module-info h2{
+    float: left;
+}
+
+.sub-module-info a{
+    float: right;
+}
+
+.overview-sub-module .sub-module-description{
+    color: #F96506;
+    line-height: 1.5em;
+    border-bottom: 1px dotted #3F3E3E;
+    padding-bottom: 1em;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* PROPERTIES
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.properties{
+    font-size: 0.875rem;
+    border-bottom: 1px dotted #3F3E3E;
+    padding-bottom: 2rem;
+}
+
+.properties h3{
+    width: 100%;
+    font-size: 0.875rem;
+    text-transform: capitalize;
+    font-weight: normal;
+    color: #3F3E3E;
+}
 
