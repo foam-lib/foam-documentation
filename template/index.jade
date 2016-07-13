@@ -2,15 +2,37 @@ mixin createPropertiesOverview(prefix,properties)
     li.properties
         h3 #{prefix}
         ul.property-list
-            each group in properties
-                li.list
-                    - if(group.name)
-                    h3 #{group.name}
+            - //get number of elements per row
+            - const numRows = 3;
+            - var elements = [];
+            - for(var i = 0; i < properties.length; ++i){
+            -     var property = properties[i];
+            -     if(property.name){
+            -         elements.push(property.name);
+            -     }
+            -     elements = elements.concat(property.items);
+            - }
+            - const numElements = elements.length;
+            - const numElementsPerRow = Math.round(numElements / numRows);
+
+            - //distribute elements across rows
+            - for(var i = 0; i < numRows; ++i)
+                li.list-row
                     ul
-                        each item in group.items
-                            li #{item.name}
-
-
+                        -for(var j = 0; j < numElementsPerRow; ++j){
+                        -   var index = j + i * numElementsPerRow;
+                        -   if(index > numElements - 1) {
+                        -       continue
+                        -   }
+                        -   var element = elements[index];
+                        -   //group header
+                        -   if(typeof element === 'string'){
+                            li.property-group #{element}
+                        -   //property item
+                        -   } else {
+                            li #{element.name}
+                        -   }
+                        -}
 
 mixin createSubModuleReference(module)
     li.overview-sub-module
