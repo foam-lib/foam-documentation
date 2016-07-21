@@ -102,20 +102,18 @@ function parse(module_string,cb){
 
     function parse_jsdoc_data(data){
         data = JSON.parse(data);
-
         var classes = [];
         var classKeyIndexMap = {};
         var objects = [];
 
         for(var i = data.length - 1; i > -1; i--){
             var item = data[i];
-
             //move custom tags to map
             if(item.customTags){
                 var customTags = {};
                 for(var j = 0; j < item.customTags.length; ++j){
                     var tag = item.customTags[j];
-                    customTags[tag.tag] = tag.value;
+                    customTags[tag.tag] = tag.value !== undefined ? tag.value : true;
                 }
                 item.customTags = customTags;
             }
@@ -144,7 +142,6 @@ function parse(module_string,cb){
                 objects.push(item);
             }
         }
-
         //parse function
         function parseFunction(data){
             return {
@@ -154,48 +151,49 @@ function parse(module_string,cb){
                 return : null
             }
         }
-
         //extract class properties
         for(var name in classKeyIndexMap){
-
             var class_ = classes[classKeyIndexMap[name]];
+            var functions = class_.functions;
+            var properties = class_.properties;
+
             for(var i = data.length - 1; i > -1; i--){
                 var item = data[i];
-                var isMember =
-                    item.memberof === name ||
-                    //handle es5 setter / getter
-                    item.customTags && item.customTags.custom_memberof === name;
-
-                if(!isMember){
+                var isES5SetterGetter = item.customTags && item.customTags.custom_memberof === name;
+                if(item.memberof !== name && !isES5SetterGetter){
                     continue;
                 }
-
                 switch(item.kind){
                     case 'constructor':
                         class_.constructor = parseFunction(item);
                         break;
                     case 'function':
-                        class_.functions[item.scope] = parseFunction(item);
+                        if(isES5SetterGetter){
+                            var scope = item.scope;
+                            var type  = item.customTags.custom_setter ? 'set' : 'get';
+                            item.name = item.memberof; //actual function name
+                            item = parseFunction(item);
+                            item.type = type;
+                            functions[scope].push(item);
+                        } else{
+                            functions[item.scope].push(parseFunction(item));
+                        }
                         break;
                     default:
-
+                        //
                         break;
                 }
-
                 if(item.kind === 'constructor'){
                     class_.constructor = parse;
                 }
-
                 data.splice(i,1);
             }
         }
-
         return {
             classes : classes,
             objects : objects
         };
     }
-
     //parse module
     function parseModule(module,cb){
         var stream = jsdoc_parse({src : module.path,private : false});
@@ -204,7 +202,6 @@ function parse(module_string,cb){
             cb();
         });
     }
-
     //async step modules
     var indexModule = 0;
     var numModules = data.modules.length;
@@ -219,3 +216,7 @@ function parse(module_string,cb){
 
     parseModule(data.modules[indexModule],onFileParsed);
 }
+
+parse(MODULES_TO_PARSE[2],function(data){
+
+});
