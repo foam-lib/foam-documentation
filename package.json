@@ -7,7 +7,8 @@
     "url": "http://henrykwollik.com"
   },
   "dependencies": {
-    "jade" : "^1.11.0"
+    "jade" : "^1.11.0",
+    "jsdoc-parse" : "1.2.7"
   },
   "license": "MIT"
 }
