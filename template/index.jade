@@ -8,7 +8,7 @@ mixin createPropertiesOverview(prefix,properties)
             - for(var i = 0; i < properties.length; ++i){
             -     var property = properties[i];
             -     if(property.name){
-            -         elements.push(property.name);
+            -         elements.push('placeholder',property.name);
             -     }
             -     elements = elements.concat(property.items);
             - }
@@ -27,10 +27,15 @@ mixin createPropertiesOverview(prefix,properties)
                         -   var element = elements[index];
                         -   //group header
                         -   if(typeof element === 'string'){
+                        -       if(element === 'placeholder'){
+                            li.property-placeholder
+                        -       } else {
                             li.property-group #{element}
+                        -       }
                         -   //property item
                         -   } else {
-                            li #{element.name}
+                            li
+                                a #{element.name}
                         -   }
                         -}
 
@@ -69,7 +74,7 @@ html(lang="en")
     body
         header#beta-label
             strong FOAM BETA API REFERENCE
-            |  – Overview beta.0.0.4
+            |  – OVERVIEW
         main#reference-beta
             header#reference-header
                 img(src='./assets/images/Logo-50x65.svg')#header-logo
