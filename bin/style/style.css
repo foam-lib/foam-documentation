@@ -136,6 +136,10 @@ a, a:hover, a:active, a:link, a:visited{
 /* MODULE
 /*--------------------------------------------------------------------------------------------------------------------*/
 
+.overview-module{
+    padding-bottom: 1rem;
+}
+
 .module-info, .sub-module-info{
     height: 55px;
     line-height: 53px;
@@ -147,7 +151,7 @@ a, a:hover, a:active, a:link, a:visited{
     color: #3F3E3E;
     font-size: 0.75rem;
     text-transform: uppercase;
-    line-height: 56px;
+    line-height: 58px;
 }
 
 .module-info h2, .module-info .info-meta{
@@ -196,6 +200,10 @@ a, a:hover, a:active, a:link, a:visited{
     padding-bottom: 1em;
 }
 
+.sub-module-description{
+    margin-bottom: 0;
+}
+
 /*--------------------------------------------------------------------------------------------------------------------*/
 /* PROPERTIES
 /*--------------------------------------------------------------------------------------------------------------------*/
@@ -203,19 +211,19 @@ a, a:hover, a:active, a:link, a:visited{
 .properties{
     font-size: 0.875rem;
     border-bottom: 1px dotted #3F3E3E;
-    padding-bottom: 2rem;
+    padding: 1rem 0 2.65rem 0;
+    margin: 0;
+    line-height: 1.65em;
 }
 
 .properties h3{
     width: 100%;
-    font-size: 0.875rem;
+    font-size: inherit;
     text-transform: capitalize;
     font-weight: normal;
     color: #3F3E3E;
-}
-
-.property-list{
-    padding-bottom: 1.5em;
+    padding: 0;
+    margin: 0;
 }
 
 .list-row{
@@ -223,5 +231,38 @@ a, a:hover, a:active, a:link, a:visited{
     display: inline-block;
     box-sizing: border-box;
     float: left;
+}
+
+.property-list{
+    padding-bottom: 1.5em;
+}
+
+.properties:last-of-type{
+    padding-bottom: 4rem;
+}
+
+.property-list li a:visited,
+.property-list li a:active{
+    color: inherit;
+    text-decoration: none;
+}
+
+.property-list li a:hover{
+    border-bottom: 1px dotted #F96506;
+    cursor: pointer;
+}
+
+.property-group{
+    color: #3F3E3E;
+}
+
+.property-placeholder:after{
+    content: ' ';
+}
+
+.overview-sub-module:last-child .properties:last-of-type{
+    /*background-color: #00ff00;*/
+    border-bottom: none;
+
 }
 
