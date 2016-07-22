@@ -178,7 +178,11 @@ function parse(module_string,cb){
                         }
                         break;
                     default:
-                        //
+                        properties[item.scope].push({
+                            name: item.name,
+                            type: item.type.names[0],
+                            description: item.description
+                        });
                         break;
                 }
                 data.splice(i,1);
@@ -189,7 +193,7 @@ function parse(module_string,cb){
             console.log('Unhandled documentation:');
             console.log(JSON.stringify(data));
         }
-        
+
         return {
             classes : classes,
             global_constants: global_constants,
@@ -223,6 +227,3 @@ function parse(module_string,cb){
     parseModule(data.modules[indexModule],onFileParsed);
 }
 
-parse(MODULES_TO_PARSE[0],function(data){
-
-});
