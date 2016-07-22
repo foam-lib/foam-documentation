@@ -58,14 +58,21 @@ function parse(module_string,cb){
 
         data.splice(i,1);
 
-        //parse function
         function parseFunction(data){
+            var returns = data.returns;
+            if(returns){
+                for(var i = 0;i < returns.length; ++i){
+                    returns[i] = returns[i].type.names[0];
+                }
+            } else {
+                returns = ['void'];
+            }
             return {
                 name : data.name,
                 description : data.description,
                 params : data.params,
                 examples : data.examples,
-                return : null
+                return : returns
             }
         }
 
@@ -182,7 +189,7 @@ function parse(module_string,cb){
             console.log('Unhandled documentation:');
             console.log(JSON.stringify(data));
         }
-
+        
         return {
             classes : classes,
             global_constants: global_constants,
