@@ -10,60 +10,6 @@ const MODULES_TO_PARSE = [
     'context-gl'
 ];
 
-/**
- * Parses module jsdoc json to
- * [{
- *     name: 'npm-module-name',
- *     version: 0.0.1,
- *     repository: 'repository-url',
- *     modules: [{
- *         path: 'module-path',
- *         items: [{
- *             classes : [{
- *                 name : 'class-name',
- *                 description: 'class-description',
- *                 constructor : {
- *                      name : 'constructor-name',
- *                      description : 'constructor-description',
- *                      params: [{
- *                          name: 'param-name',
- *                          type: 'param-type',
- *                          description: 'param-description',
- *                          default: 'param-default'
- *                      },...]
- *                 },
- *                 properties: [
- *                     static : [
- *                     ],
- *                     instance : [
- *                     ]
- *                 ],
- *                 functions: {
- *                     static : [{
- *                         name : 'function-name',
- *                         description : 'function-description',
- *                         params: [{
- *                             name: 'param-name',
- *                             type: 'param-type',
- *                             description: 'param-description',
- *                             default: 'param-default'
- *                         },...],
- *                         return: {
- *                             type: 'return-type'
- *                         }
- *                     },...],
- *                     instance : [
- *                     ]
- *                 }
- *             },...],
- *             objects : [{
- *             },...]
- *         }]
- *      },...]
- * },...]
- * @param module_string
- * @param cb
- */
 function parse(module_string,cb){
     var path = '../foam-' + module_string;
     var files = fs.readdirSync(path);
@@ -87,9 +33,9 @@ function parse(module_string,cb){
 
     var package_ = JSON.parse(fs.readFileSync(packagePath));
     var data = {
-        name: package_.name,
-        version: package_.version,
-        repository: package_.repository,
+        name : package_.name,
+        version : package_.version,
+        repository : package_.repository,
         modules : []
     };
 
@@ -102,9 +48,14 @@ function parse(module_string,cb){
 
     function parse_jsdoc_data(data){
         data = JSON.parse(data);
+
         var classes = [];
         var classKeyIndexMap = {};
-        var objects = [];
+        var global_constants = [];
+        var global_enums = [];
+        var global_objects = [];
+
+        data.splice(i,1);
 
         for(var i = data.length - 1; i > -1; i--){
             var item = data[i];
@@ -122,7 +73,7 @@ function parse(module_string,cb){
                 var name = item.name;
                 if(!classKeyIndexMap[name]){
                     classes.push({
-                        name:name,
+                        name : name,
                         description : item.description,
                         constructor : null,
                         properties : {
@@ -135,19 +86,55 @@ function parse(module_string,cb){
                         }
                     });
                     classKeyIndexMap[name] = classes.length - 1;
+                    data.splice(i,1);
                 }
-                data.splice(i,1);
             //extract non-class members
-            } else if(!item.memberof){
-                objects.push(item);
+            }else if(!item.memberof){
+                var name = item.name;
+                var description = item.description;
+                //global
+                if(item.kind === 'constant'){
+                    var type  = item.type.names[0];
+                    var typel = type.toLowerCase();
+                    //enum
+                    if(item.isEnum){
+                        var properties = item.properties;
+                        for(var j = 0; j < properties.length; ++j){
+                            var property = properties[j];
+                            property.type = property.type.names[0];
+                        }
+                        global_enums.push({
+                            name: name,
+                            description : description,
+                            type: type,
+                            properties: item.properties
+                        });
+                        data.splice(i,1);
+                    //object
+                    } else if(typel === 'object') {
+                        global_objects.push({
+                            name: name,
+                            description: description,
+                            properties: item.properties
+                        });
+                        data.splice(i,1);
+                    //primitive
+                    } else {
+
+                    }
+
+                }else{
+
+                }
             }
         }
         //parse function
         function parseFunction(data){
             return {
                 name : data.name,
-                description: data.description,
+                description : data.description,
                 params : data.params,
+                examples : data.examples,
                 return : null
             }
         }
@@ -170,12 +157,12 @@ function parse(module_string,cb){
                     case 'function':
                         if(isES5SetterGetter){
                             var scope = item.scope;
-                            var type  = item.customTags.custom_setter ? 'set' : 'get';
+                            var type = item.customTags.custom_setter ? 'set' : 'get';
                             item.name = item.memberof; //actual function name
                             item = parseFunction(item);
                             item.type = type;
                             functions[scope].push(item);
-                        } else{
+                        }else{
                             functions[item.scope].push(parseFunction(item));
                         }
                         break;
@@ -183,17 +170,16 @@ function parse(module_string,cb){
                         //
                         break;
                 }
-                if(item.kind === 'constructor'){
-                    class_.constructor = parse;
-                }
                 data.splice(i,1);
             }
         }
         return {
             classes : classes,
-            objects : objects
+            global_constants: global_constants,
+            global_enums: global_enums
         };
     }
+
     //parse module
     function parseModule(module,cb){
         var stream = jsdoc_parse({src : module.path,private : false});
@@ -202,6 +188,7 @@ function parse(module_string,cb){
             cb();
         });
     }
+
     //async step modules
     var indexModule = 0;
     var numModules = data.modules.length;
@@ -217,6 +204,6 @@ function parse(module_string,cb){
     parseModule(data.modules[indexModule],onFileParsed);
 }
 
-parse(MODULES_TO_PARSE[2],function(data){
+parse(MODULES_TO_PARSE[0],function(data){
 
 });
