@@ -54,8 +54,20 @@ function parse(module_string,cb){
         var global_constants = [];
         var global_enums = [];
         var global_objects = [];
+        var global_functions = [];
 
         data.splice(i,1);
+
+        //parse function
+        function parseFunction(data){
+            return {
+                name : data.name,
+                description : data.description,
+                params : data.params,
+                examples : data.examples,
+                return : null
+            }
+        }
 
         for(var i = data.length - 1; i > -1; i--){
             var item = data[i];
@@ -122,20 +134,12 @@ function parse(module_string,cb){
                     } else {
 
                     }
-
-                }else{
+                }else if(item.kind === 'function'){
+                    global_functions.push(parseFunction(item));
+                    data.splice(i,1);
+                } else {
 
                 }
-            }
-        }
-        //parse function
-        function parseFunction(data){
-            return {
-                name : data.name,
-                description : data.description,
-                params : data.params,
-                examples : data.examples,
-                return : null
             }
         }
         //extract class properties
@@ -173,10 +177,18 @@ function parse(module_string,cb){
                 data.splice(i,1);
             }
         }
+
+        if(data.length > 0){
+            console.log('Unhandled documentation:');
+            console.log(JSON.stringify(data));
+        }
+
         return {
             classes : classes,
             global_constants: global_constants,
-            global_enums: global_enums
+            global_enums: global_enums,
+            global_objects: global_objects,
+            global_functions: global_functions
         };
     }
 
