@@ -1038,9 +1038,22 @@
               "instance": []
             },
             "constructor": {
-              "description": "KeyboardEvent",
+              "description": "",
               "examples": [],
-              "params": []
+              "params": [
+                {
+                  "name": "type",
+                  "description": "",
+                  "optional": false,
+                  "types": []
+                },
+                {
+                  "name": "data",
+                  "description": "",
+                  "optional": false,
+                  "types": []
+                }
+              ]
             }
           }
         ],
@@ -1298,7 +1311,51 @@
       "items": {
         "classes": [],
         "constants": [],
-        "enums": [],
+        "enums": [
+          {
+            "name": "ResourceType",
+            "description": "Resource type representation.",
+            "category": null,
+            "examples": [],
+            "properties": [
+              {
+                "name": "TEXT",
+                "type": [
+                  "string"
+                ],
+                "description": "Text resource"
+              },
+              {
+                "name": "IMAGE",
+                "type": [
+                  "string"
+                ],
+                "description": "Image resource"
+              },
+              {
+                "name": "VIDEO",
+                "type": [
+                  "string"
+                ],
+                "description": "Video resource"
+              },
+              {
+                "name": "JSON",
+                "type": [
+                  "string"
+                ],
+                "description": "JSON resource"
+              },
+              {
+                "name": "ARRAY_BUFFER",
+                "type": [
+                  "string"
+                ],
+                "description": "ArrayBuffer resource"
+              }
+            ]
+          }
+        ],
         "functions": []
       }
     },
@@ -1306,7 +1363,23 @@
       "path": "../foam-app/SharedResources.js",
       "items": {
         "classes": [],
-        "constants": [],
+        "constants": [
+          {
+            "name": "SharedResources",
+            "description": "Resources loaded on app startup shared across the application.",
+            "category": null,
+            "examples": [],
+            "properties": [
+              {
+                "name": "dispose",
+                "type": [
+                  "function"
+                ],
+                "description": "Disposes all loaded resources."
+              }
+            ]
+          }
+        ],
         "enums": [],
         "functions": []
       }
