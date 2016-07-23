@@ -367,7 +367,7 @@ for(var i = 0; i < modulesToParse.length; ++i){
 
         fs.writeFile(
             path.join(PATH_OUT,data.name + '.json'),
-            JSON.stringify(data,null,'\t')
+            JSON.stringify(data,null,'  ')
         );
     });
 }
