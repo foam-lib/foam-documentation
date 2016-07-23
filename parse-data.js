@@ -202,46 +202,45 @@ function parseData(data){
                     break;
             }
         }
+    }
 
-        //get global constants, objects, enums, functions
-        for(var i = data.length - 1; i > -1; i--){
-            var item = data[i];
-
-            switch(item.type){
-                case 'constant':
-                    constants.push({
-                        name : item.name,
-                        description : item.description,
-                        category : item.category,
-                        examples : item.examples,
-                        properties : item.properties
-                    });
-                    data.splice(i,1);
-                    break;
-                case 'enum':
-                    enums.push({
-                        name : item.name,
-                        description : item.description,
-                        category : item.category,
-                        examples : item.examples,
-                        properties: item.properties
-                    });
-                    data.splice(i,1);
-                    break;
-                case 'function':
-                    functions.push({
-                        name: item.name,
-                        description: item.description,
-                        category : item.category,
-                        examples : item.examples,
-                        params : item.params,
-                        returns : item.returns
-                    });
-                    data.splice(i,1);
-                    break;
-                default:
-                    break;
-            }
+    //get global constants, objects, enums, functions
+    for(var i = data.length - 1; i > -1; i--){
+        var item = data[i];
+        switch(item.type){
+            case 'constant':
+                constants.push({
+                    name : item.name,
+                    description : item.description,
+                    category : item.category,
+                    examples : item.examples,
+                    properties : item.properties
+                });
+                data.splice(i,1);
+                break;
+            case 'enum':
+                enums.push({
+                    name : item.name,
+                    description : item.description,
+                    category : item.category,
+                    examples : item.examples,
+                    properties: item.properties
+                });
+                data.splice(i,1);
+                break;
+            case 'function':
+                functions.push({
+                    name: item.name,
+                    description: item.description,
+                    category : item.category,
+                    examples : item.examples,
+                    params : item.params,
+                    returns : item.returns
+                });
+                data.splice(i,1);
+                break;
+            default:
+                break;
         }
     }
 
