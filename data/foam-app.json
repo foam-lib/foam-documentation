@@ -1,0 +1,1553 @@
+{
+	"name": "foam-app",
+	"version": "0.0.1",
+	"modules": [
+		{
+			"path": "../foam-app/App.js",
+			"items": {
+				"classes": [
+					{
+						"name": "App",
+						"description": "The base class for all Foam applications.",
+						"properties": {
+							"static": [],
+							"instance": []
+						},
+						"methods": {
+							"static": [
+								{
+									"name": "sharedApp",
+									"description": "Returns a shared app instance.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"null"
+									],
+									"params": []
+								}
+							],
+							"instance": [
+								{
+									"name": "setWindowSize2",
+									"description": "Sets the context window width and height",
+									"category": "Window.",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "w",
+											"description": "",
+											"optional": false,
+											"types": []
+										},
+										{
+											"name": "h",
+											"description": "",
+											"optional": false,
+											"types": []
+										},
+										{
+											"name": "contentScale",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "isWindowFullscreen",
+									"description": "Returns true if the current context window is fullscreen.",
+									"category": "Window",
+									"examples": [],
+									"returns": [
+										"boolean"
+									],
+									"params": []
+								},
+								{
+									"name": "setWindowFullscreen",
+									"description": "Enables / disables the current context window fullscreen mode",
+									"category": "Window",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "enable",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "getWindowAspectRatio",
+									"description": "Returns the current context window aspect ratio.",
+									"category": "Window",
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getWindowCenter",
+									"description": "Returns the current context window center.",
+									"category": "Window",
+									"examples": [],
+									"returns": [
+										"Array.<number>"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "Optional out",
+											"optional": true,
+											"types": [
+												"Array.<number>"
+											]
+										}
+									]
+								},
+								{
+									"name": "getWindowBounds",
+									"description": "Returns the current context window bounds.",
+									"category": "Window",
+									"examples": [],
+									"returns": [
+										"Array.<number>"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "Optional out",
+											"optional": true,
+											"types": [
+												"Array.<number>"
+											]
+										}
+									]
+								},
+								{
+									"name": "getWindowHeight",
+									"description": "Returns the current context window height.",
+									"category": "Window",
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getWindowWidth",
+									"description": "Returns the current context window width.",
+									"category": "Window",
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getWindowSize",
+									"description": "Returns the current context window size.",
+									"category": "Window",
+									"examples": [],
+									"returns": [
+										"Array.<number>"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "Optional out",
+											"optional": true,
+											"types": [
+												"Array.<number>"
+											]
+										}
+									]
+								},
+								{
+									"name": "setWindowSize",
+									"description": "Sets the context window width and height.",
+									"category": "Window",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "v",
+											"description": "",
+											"optional": false,
+											"types": []
+										},
+										{
+											"name": "contentScale",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "isMouseDown",
+									"description": "Returns true if the mouse is down.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "getMouseWheelDirection",
+									"description": "Returns the mouse wheel direction.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "getMouseWheelDelta",
+									"description": "Returns the mouse wheel delta.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "getMousePositionYPrevNormalized",
+									"description": "Returns the previous normalized mouse y-coordinate.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "getMousePositionXPrevNormalized",
+									"description": "Returns the previous normalized mouse x-coordinate.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "getMousePositionYNormalized",
+									"description": "Returns the current normalized mouse y-coordinate.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "getMousePositionXNormalized",
+									"description": "Returns the current normalized mouse x-coordinate.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "getMousePositionYPrev",
+									"description": "Returns the previous mouse y-coordinate.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "getMousePositionXPrev",
+									"description": "Returns the previous mouse x-coordinate.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "getMousePositionY",
+									"description": "Returns the current mouse y-coordinate.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "getMousePositionX",
+									"description": "Returns the current mouse x-coordinate.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "getMousePositionPrevNormalized",
+									"description": "Returns the previous normalized mouse position.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "getMousePositionNormalized",
+									"description": "Returns the current normalized mouse position.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "getMousePositionPrev",
+									"description": "Returns the mouse previous position.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "getMousePosition",
+									"description": "Returns the mouse current position.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onKeyUp",
+									"description": "Callback on key up event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onKeyPress",
+									"description": "Callback on key press event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onKeyDown",
+									"description": "Callback on key down event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onTouchEnd",
+									"description": "Callback on touch end event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onTouchMove",
+									"description": "Callback on touch move event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onTouchBegin",
+									"description": "Callback on touch begin event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onMouseWheel",
+									"description": "Callback on mouse wheel event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onMouseOut",
+									"description": "Callback on mouse out event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onMouseEnter",
+									"description": "Callback on mouse enter event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onMouseMove",
+									"description": "Callback on mouse move event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onMouseDblClick",
+									"description": "Callback on mouse double click event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onMouseUp",
+									"description": "Callback on mouse up event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onMouseDrag",
+									"description": "Callback on mouse drag event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onMouseDown",
+									"description": "Callback on mouse down event.",
+									"category": "User Input",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "e",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "onResumeUpdate",
+									"description": "Callback on update loop resume.",
+									"category": "Update Loop",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": []
+								},
+								{
+									"name": "onRestartUpdate",
+									"description": "Callback on update loop restart.",
+									"category": "Update Loop",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": []
+								},
+								{
+									"name": "onStopUpdate",
+									"description": "Callback on update loop stop.",
+									"category": "Update Loop",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": []
+								},
+								{
+									"name": "resumeUpdate",
+									"description": "Resumes the update loop if it has been stopped.",
+									"category": "Update Loop",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": []
+								},
+								{
+									"name": "restartUpdate",
+									"description": "Restarts the update loop if it has been stopped.",
+									"category": "Update Loop",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": []
+								},
+								{
+									"name": "stopUpdate",
+									"description": "Stops the update loop.",
+									"category": "Update Loop",
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": []
+								},
+								{
+									"name": "getDelta",
+									"description": "Returns the delta time.",
+									"category": "Time",
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getFramesElapsed",
+									"description": "Returns the number of frames elapsed since app start.",
+									"category": "Time",
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getSecondsElapsed",
+									"description": "Returns the time elapsed since app start in seconds.",
+									"category": "Time",
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getTime",
+									"description": "Returns app time representation.",
+									"category": "Time",
+									"examples": [],
+									"returns": [
+										"Time"
+									],
+									"params": []
+								},
+								{
+									"name": "getScreenContentScale",
+									"description": "Returns the screen´s device pixel ratio.",
+									"category": "Screen",
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getContextElement",
+									"description": "Returns the context´s underlying element.",
+									"category": "Context",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "getContextType",
+									"description": "Returns the type of context the app has been initialized with.",
+									"category": "Context",
+									"examples": [],
+									"returns": [
+										"*"
+									],
+									"params": []
+								},
+								{
+									"name": "update",
+									"description": "Tick callback, optional.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": [
+										{
+											"name": "delta",
+											"description": "",
+											"optional": false,
+											"types": []
+										}
+									]
+								},
+								{
+									"name": "setup",
+									"description": "Called once after resource loading and context setup for initializing app properties. Must be overridden by user.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": []
+								},
+								{
+									"name": "onContextNotAvailable",
+									"description": "Callback on context not available.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"void"
+									],
+									"params": []
+								}
+							]
+						}
+					}
+				],
+				"constants": [
+					{
+						"name": "DefaultConfig",
+						"description": "App default config.",
+						"category": null,
+						"examples": [],
+						"properties": [
+							{
+								"name": "type",
+								"type": [
+									"string"
+								],
+								"description": "Context type 2d/3d/none"
+							},
+							{
+								"name": "context",
+								"type": [
+									"object"
+								],
+								"description": "Context config"
+							},
+							{
+								"name": "element",
+								"type": [
+									"object"
+								],
+								"description": "Target element HTMLCanvasElement / HTMLDomElement"
+							},
+							{
+								"name": "elementInput",
+								"type": [
+									"object"
+								],
+								"description": "Target input element for Mouse / Keyboard events"
+							},
+							{
+								"name": "elementInputMouse",
+								"type": [
+									"object"
+								],
+								"description": "Target input element for Mouse events"
+							},
+							{
+								"name": "elementInputTouch",
+								"type": [
+									"object"
+								],
+								"description": "Target input element for Mouse events"
+							},
+							{
+								"name": "elementInputKeyboard",
+								"type": [
+									"object"
+								],
+								"description": "Target input element for Keyboard events"
+							},
+							{
+								"name": "loop",
+								"type": [
+									"boolean"
+								],
+								"description": "If true update animation loop is active"
+							},
+							{
+								"name": "interactive",
+								"type": [
+									"boolean"
+								],
+								"description": "If true the app can receive user input"
+							}
+						]
+					}
+				],
+				"enums": [
+					{
+						"name": "ContextType",
+						"description": "Available context types",
+						"category": null,
+						"examples": [],
+						"properties": [
+							{
+								"name": "CONTEXT_2D",
+								"type": [
+									"string"
+								],
+								"description": "foam-context-2d"
+							},
+							{
+								"name": "CONTEXT_2D_SVG",
+								"type": [
+									"string"
+								],
+								"description": "foam-context2d-svg"
+							},
+							{
+								"name": "CONTEXT_3D",
+								"type": [
+									"string"
+								],
+								"description": "foam-context-3d"
+							},
+							{
+								"name": "CONTEXT_NONE",
+								"type": [
+									"string"
+								],
+								"description": "no context"
+							}
+						]
+					}
+				],
+				"functions": [
+					{
+						"name": "DeleteApp",
+						"description": "Completely deletes a Foam App instance.",
+						"category": null,
+						"examples": [],
+						"params": [
+							{
+								"name": "app",
+								"description": "",
+								"optional": false,
+								"types": []
+							}
+						],
+						"returns": [
+							"void"
+						]
+					},
+					{
+						"name": "CreateApp",
+						"description": "Creates a new Foam App instance with optional config and resources.",
+						"category": null,
+						"examples": [
+							"CreateApp({\n   setup  : function(){},\n   update : function(delta){}\n});\n\nCreateApp({\n  config : {\n     canvas : someTargetCanvas\n  },\n  setup : function(){},\n  update ; function(delta){}\n});",
+							"//config\nlet config = {\n   type: 3d,\n   canvas : someTargetCanvas\n};"
+						],
+						"params": [
+							{
+								"name": "appObj",
+								"description": "",
+								"optional": false,
+								"types": []
+							},
+							{
+								"name": "onError",
+								"description": "Optional on resource error callback.",
+								"optional": true,
+								"types": []
+							},
+							{
+								"name": "onProcess",
+								"description": "Optional on resource load process callback.",
+								"optional": true,
+								"types": []
+							},
+							{
+								"name": "onLoad",
+								"description": "Optional on resources loaded callback",
+								"optional": true,
+								"types": []
+							},
+							{
+								"name": "onError",
+								"description": "",
+								"optional": false,
+								"types": []
+							},
+							{
+								"name": "onProcess",
+								"description": "",
+								"optional": false,
+								"types": []
+							}
+						],
+						"returns": [
+							"void"
+						]
+					}
+				]
+			}
+		},
+		{
+			"path": "../foam-app/Keyboard.js",
+			"items": {
+				"classes": [
+					{
+						"name": "Keyboard",
+						"description": "Keyboard input representation.",
+						"properties": {
+							"static": [],
+							"instance": []
+						},
+						"methods": {
+							"static": [
+								{
+									"name": "sharedKeyboard",
+									"description": "Returns a shared keyboard instance.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"null"
+									],
+									"params": []
+								}
+							],
+							"instance": []
+						},
+						"constructor": {
+							"description": "Keyboard",
+							"examples": [],
+							"params": []
+						}
+					}
+				],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		},
+		{
+			"path": "../foam-app/KeyboardEvent.js",
+			"items": {
+				"classes": [
+					{
+						"name": "KeyboardEvent",
+						"description": "Keyboard input event representation.",
+						"properties": {
+							"static": [
+								{
+									"name": "KEY_UP",
+									"type": "string",
+									"description": "Key event type key up.",
+									"category": null,
+									"examples": []
+								},
+								{
+									"name": "KEY_DOWN",
+									"type": "string",
+									"description": "Key event type key down.",
+									"category": null,
+									"examples": []
+								},
+								{
+									"name": "KEY_PRESS",
+									"type": "string",
+									"description": "Key event type key press.",
+									"category": null,
+									"examples": []
+								}
+							],
+							"instance": []
+						},
+						"methods": {
+							"static": [],
+							"instance": []
+						},
+						"constructor": {
+							"description": "KeyboardEvent",
+							"examples": [],
+							"params": []
+						}
+					}
+				],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		},
+		{
+			"path": "../foam-app/Mouse.js",
+			"items": {
+				"classes": [
+					{
+						"name": "Mouse",
+						"description": "Mouse input representation.",
+						"properties": {
+							"static": [],
+							"instance": []
+						},
+						"methods": {
+							"static": [
+								{
+									"name": "sharedMouse",
+									"description": "Returns a shared mouse instance.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"Mouse"
+									],
+									"params": []
+								}
+							],
+							"instance": [
+								{
+									"name": "toString",
+									"description": "Returns a state string description.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"string"
+									],
+									"params": []
+								},
+								{
+									"name": "isDown",
+									"description": "Returns true if the mouse is down.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"boolean"
+									],
+									"params": []
+								},
+								{
+									"name": "getWheelDirection",
+									"description": "Returns the mouse wheel direction.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getWheelDelta",
+									"description": "Returns the mouse wheel delta.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getPositionYPrevNormalized",
+									"description": "Returns the previous normalized mouse y-coordinate.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getPositionXPrevNormalized",
+									"description": "Returns the previous normalized mouse x-coordinate.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getPositionYNormalized",
+									"description": "Returns the current normalized mouse y-coordinate.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getPositionXNormalized",
+									"description": "Returns the current normalized mouse x-coordinate.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getPositionPrevNormalized",
+									"description": "Returns the previous normalized mouse position.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"Array.<number>"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "Optional out",
+											"optional": true,
+											"types": [
+												"Array.<number>"
+											]
+										}
+									]
+								},
+								{
+									"name": "getPositionNormalized",
+									"description": "Returns the current normalized mouse position.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"Array.<number>"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "Optional out",
+											"optional": true,
+											"types": [
+												"Array.<number>"
+											]
+										}
+									]
+								},
+								{
+									"name": "getPositionYPrev",
+									"description": "Returns the previous mouse y-coordinate.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getPositionXPrev",
+									"description": "Returns the previous mouse x-coordinate.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getPositionY",
+									"description": "Returns the current mouse y-coordinate.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getPositionX",
+									"description": "Returns the current mouse x-coordinate.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getPositionPrev",
+									"description": "Returns the mouse previous position.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"Array.<number>"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "Optional out",
+											"optional": true,
+											"types": [
+												"Array.<number>"
+											]
+										}
+									]
+								},
+								{
+									"name": "getPosition",
+									"description": "Returns the mouse current position.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"Array.<number>"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "Optional out",
+											"optional": true,
+											"types": [
+												"Array.<number>"
+											]
+										}
+									]
+								}
+							]
+						},
+						"constructor": {
+							"description": "Mouse",
+							"examples": [],
+							"params": []
+						}
+					}
+				],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		},
+		{
+			"path": "../foam-app/MouseEvent.js",
+			"items": {
+				"classes": [],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		},
+		{
+			"path": "../foam-app/ResourceType.js",
+			"items": {
+				"classes": [],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		},
+		{
+			"path": "../foam-app/SharedResources.js",
+			"items": {
+				"classes": [],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		},
+		{
+			"path": "../foam-app/Time.js",
+			"items": {
+				"classes": [],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		},
+		{
+			"path": "../foam-app/TimeEvent.js",
+			"items": {
+				"classes": [],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		},
+		{
+			"path": "../foam-app/Timer.js",
+			"items": {
+				"classes": [],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		},
+		{
+			"path": "../foam-app/Touch.js",
+			"items": {
+				"classes": [],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		},
+		{
+			"path": "../foam-app/TouchEvent.js",
+			"items": {
+				"classes": [],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		},
+		{
+			"path": "../foam-app/TouchGroup.js",
+			"items": {
+				"classes": [],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		},
+		{
+			"path": "../foam-app/Window.js",
+			"items": {
+				"classes": [
+					{
+						"name": "Window",
+						"description": "Window representation",
+						"properties": {
+							"static": [],
+							"instance": []
+						},
+						"methods": {
+							"static": [
+								{
+									"name": "sharedWindow",
+									"description": "Returns the shared window instance.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"Window"
+									],
+									"params": []
+								}
+							],
+							"instance": [
+								{
+									"name": "isFullscreen",
+									"description": "Returns true if the window is currently in fullscreen mode.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"boolean"
+									],
+									"params": []
+								},
+								{
+									"name": "getContentScale",
+									"description": "Returns the window´s content scale.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getAspectRatio",
+									"description": "Returns the window´s aspect ratio.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getCenter",
+									"description": "Returns the window´s bounds center.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"Array.<number>"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "Optional out",
+											"optional": true,
+											"types": [
+												"Array.<number>"
+											]
+										}
+									]
+								},
+								{
+									"name": "getSizeNormalized",
+									"description": "Returns the window´s size normalized.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"Array.<number>"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "Optional out",
+											"optional": true,
+											"types": [
+												"Array.<number>"
+											]
+										}
+									]
+								},
+								{
+									"name": "getHeight",
+									"description": "Returns the windows´s height.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getWidth",
+									"description": "Returns the window´s width.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"number"
+									],
+									"params": []
+								},
+								{
+									"name": "getSize",
+									"description": "Returns the window´s size.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"Array.<number>"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "Optional out",
+											"optional": true,
+											"types": [
+												"Array.<number>"
+											]
+										}
+									]
+								},
+								{
+									"name": "getBoundsNormalized",
+									"description": "Returns the window´s bounds normalized.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"Array.<number>"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "Optional out",
+											"optional": true,
+											"types": [
+												"Array.<number>"
+											]
+										}
+									]
+								},
+								{
+									"name": "getBounds",
+									"description": "Returns the window´s bounds.",
+									"category": null,
+									"examples": [],
+									"returns": [
+										"Array.<number>"
+									],
+									"params": [
+										{
+											"name": "out",
+											"description": "Optional out",
+											"optional": true,
+											"types": [
+												"Array.<number>"
+											]
+										}
+									]
+								}
+							]
+						},
+						"constructor": {
+							"description": "Window",
+							"examples": [],
+							"params": []
+						}
+					}
+				],
+				"constants": [],
+				"enums": [],
+				"functions": []
+			}
+		}
+	]
+}
