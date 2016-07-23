@@ -109,9 +109,9 @@ function prepareData(data){
             parsed.type = item.type.names[0];
         }
         if(LOG_PREPARE_DATA){
-            console.log('entry',JSON.stringify(item));
+            console.log('entry',JSON.stringify(item,null,'  '));
             console.log('---');
-            console.log('parsed',JSON.stringify(parsed));
+            console.log('parsed',JSON.stringify(parsed,null,'  '));
             console.log('--------------------------------------------------------------------------------------------');
         }
 
@@ -246,7 +246,7 @@ function parseData(data){
 
     if(data.length > 0){
         console.log('Unhandled documentation:'.red);
-        console.log(JSON.stringify(data,null,'\t'));
+        console.log(JSON.stringify(data,null,'  '));
     }
 
     return {
@@ -376,6 +376,6 @@ fs.writeFile(
     path.join(PATH_OUT,'foam-modules.json'),
     JSON.stringify({
         modules : modulesToParse
-    },null,'\t')
+    },null,'  ')
 );
 
